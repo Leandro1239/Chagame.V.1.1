@@ -1,4 +1,3 @@
-# Chagame.V.1.1
-Funcionamento básico já implementado, com cenário e personagem iniciais fictícios.
+# ChaGame_V.0.2
 
-Usando o Unity 2018.3.8f1
+Vercionamento do jogo "ChaGame"
