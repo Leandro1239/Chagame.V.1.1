@@ -5,25 +5,27 @@ using UnityEngine;
 
 public class Movimentacao : MonoBehaviour {
        
-    public int moedas = 0;                      //MOEDA
-    public TextMesh total;
+    int moedas = 0;                      //MOEDA
+    public TextMesh Total_Moeda;
 
     float forca = 20;                           //JOGADOR
+    float VelocidadeAceleração = 10;
     public Rigidbody2D player;
     private bool tocachao = false;
     Rigidbody2D rigd = new Rigidbody2D();           
-    float VelocidadeAceleração = 10;
+    
 
     public Transform checachao;                     //CHÃO
-    float chaograu = 0.2f;
     public LayerMask piso;
+    float chaograu = 0.2f;
+    
 
     public GameObject Largada;                      //RECORDE
-    public GameObject jogador;
-    private float distancia = 0;
-    private int recorde = 0;
-    public TextMesh total_Distancia;
-    Animator anim;
+    public TextMesh Total_Distancia;
+    float distancia = 0;
+    int recorde = 0;
+
+    Animator anim;                                  //Animação
 
     void Start ()                                               //Jogador
     {
@@ -36,13 +38,18 @@ public class Movimentacao : MonoBehaviour {
 
     private void Update()                                                       // MEDE A DISTANCIA E COLOCA EM 'RECORDE'
     {
-        distancia = Vector2.Distance(Largada.transform.position, jogador.transform.position);
-        //Debug.Log(distancia);
+        distancia = Vector2.Distance(Largada.transform.position, player.transform.position);
         recorde = (int)distancia;
-        total_Distancia.text = recorde.ToString();
+        Total_Distancia.text = recorde.ToString();
 
         rigd.velocity = new Vector2(VelocidadeAceleração, rigd.velocity.y);               //FAZ CORRER SOZINHO
         tocachao = Physics2D.OverlapCircle(checachao.position, chaograu, piso);             //CONTATO COM O CHAO
+
+        if (tocachao == false)
+        {
+            anim.SetBool("Pular", false);
+            anim.SetBool("Correr", true);
+        }
     }
 
     public void Pula()
@@ -56,14 +63,14 @@ public class Movimentacao : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D Chao)
+    /*public void OnCollisionEnter2D(Collision2D Chao)
     {
         if (Chao.gameObject.CompareTag("Chão"))
         {
             anim.SetBool("Pular", false);
             anim.SetBool("Correr", true);
         }
-    }
+    }*/
 
     public void OnTriggerEnter2D(Collider2D ativar)                         //COLETA E CONTA MOEDA
     {
@@ -71,7 +78,7 @@ public class Movimentacao : MonoBehaviour {
         {
             Destroy(ativar.gameObject);
             moedas += 1;
-            total.text = moedas.ToString();
+            Total_Moeda.text = moedas.ToString();
         }
     }
 }     

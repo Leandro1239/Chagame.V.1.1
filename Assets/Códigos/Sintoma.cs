@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class Sintoma : MonoBehaviour {
 
     public Image BarraVida;
-    public Text Quantidade;
-    public int ValorAtual = 100;
-    public int Dano = 25;
-    public int Energia = 25;
+   // public Text Quantidade;
+    int ValorAtual = 100;
+    int Dano = 33;
+    int Energia = 25;
 
     public void OnCollisionEnter2D(Collision2D Dano)          
     {
@@ -27,9 +27,9 @@ public class Sintoma : MonoBehaviour {
         {
             ValorAtual -= Dano;
             BarraVida.fillAmount = (float)ValorAtual/100;
-            string temp = ValorAtual.ToString();
-            Quantidade.text = temp;
-            if (ValorAtual == 0)
+            //string temp = ValorAtual.ToString();
+            //Quantidade.text = temp;
+            if (ValorAtual == 1)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
@@ -38,12 +38,12 @@ public class Sintoma : MonoBehaviour {
 
     public void VidaGanha()
     {
-        if (ValorAtual < 1)
+        if (ValorAtual < 2)
         {
             ValorAtual += Energia;
             BarraVida.fillAmount = (float)ValorAtual / 100;
-            string temp = ValorAtual.ToString();
-            Quantidade.text = temp;
+            //string temp = ValorAtual.ToString();
+            //Quantidade.text = temp;
         }
     }
 
