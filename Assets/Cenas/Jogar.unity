@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 1102128876}
   obj2: {fileID: 1291147508}
-  player: {fileID: 813815224}
+  player: {fileID: 813815221}
   contador: 1
   controlador: 0
 --- !u!61 &812225964
@@ -1423,12 +1423,12 @@ GameObject:
   m_Component:
   - component: {fileID: 813815220}
   - component: {fileID: 813815219}
-  - component: {fileID: 813815224}
   - component: {fileID: 813815223}
-  - component: {fileID: 813815221}
   - component: {fileID: 813815222}
+  - component: {fileID: 813815221}
+  - component: {fileID: 813815224}
   m_Layer: 0
-  m_Name: Playeer
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,9 +1460,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813815218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.66, y: -1.93, z: 1}
-  m_LocalScale: {x: 0.6834375, y: 0.6099844, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.18, y: -2.44, z: 1}
+  m_LocalScale: {x: 0.68343997, y: 0.60998, z: 1}
   m_Children:
   - {fileID: 1075704352}
   - {fileID: 1533480113}
@@ -1470,7 +1470,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &813815221
+--- !u!50 &813815221
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813815218}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.01
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 13
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &813815222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1483,26 +1504,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Total_Moeda: {fileID: 229137245}
-  player: {fileID: 813815224}
+  player: {fileID: 813815221}
   checachao: {fileID: 1239410748}
   piso:
     serializedVersion: 2
     m_Bits: 512
   Largada: {fileID: 249201196}
   Total_Distancia: {fileID: 1107306217}
---- !u!114 &813815222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813815218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a388835e2199174d98bd7441191de3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BarraVida: {fileID: 1739874201}
 --- !u!70 &813815223
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1519,27 +1527,19 @@ CapsuleCollider2D:
   m_Offset: {x: 1.0116583, y: -0.47211525}
   m_Size: {x: 1.9429859, y: 5.48142}
   m_Direction: 0
---- !u!50 &813815224
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &813815224
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813815218}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.01
-  m_LinearDrag: 0
-  m_AngularDrag: 0.5
-  m_GravityScale: 13
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a388835e2199174d98bd7441191de3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarraVida: {fileID: 1739874201}
 --- !u!1001 &824325976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2753,7 +2753,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 813815221}
+      - m_Target: {fileID: 813815222}
         m_MethodName: Pula
         m_Mode: 1
         m_Arguments:
@@ -3542,7 +3542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 1291147508}
   obj2: {fileID: 1291147508}
-  player: {fileID: 813815224}
+  player: {fileID: 813815221}
   contador: 1
   controlador: 0
 --- !u!61 &1888703793
