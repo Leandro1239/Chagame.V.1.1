@@ -9,6 +9,7 @@ TagManager:
   - Inimigo
   - coin
   - Sensor
+  - Vida
   layers:
   - Default
   - TransparentFX
