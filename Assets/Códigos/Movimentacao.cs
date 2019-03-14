@@ -45,11 +45,11 @@ public class Movimentacao : MonoBehaviour {
         rigd.velocity = new Vector2(VelocidadeAceleração, rigd.velocity.y);               //FAZ CORRER SOZINHO
         tocachao = Physics2D.OverlapCircle(checachao.position, chaograu, piso);             //CONTATO COM O CHAO
 
-        if (tocachao == false)
+       /* if (tocachao == false)
         {
             anim.SetBool("Pular", false);
             anim.SetBool("Correr", true);
-        }
+        }*/
     }
 
     public void Pula()
@@ -63,14 +63,14 @@ public class Movimentacao : MonoBehaviour {
         }
     }
 
-    /*public void OnCollisionEnter2D(Collision2D Chao)
+    public void OnCollisionEnter2D(Collision2D Chao)
     {
         if (Chao.gameObject.CompareTag("Chão"))
-        {
+        { 
             anim.SetBool("Pular", false);
             anim.SetBool("Correr", true);
         }
-    }*/
+    }
 
     public void OnTriggerEnter2D(Collider2D ativar)                         //COLETA E CONTA MOEDA
     {
