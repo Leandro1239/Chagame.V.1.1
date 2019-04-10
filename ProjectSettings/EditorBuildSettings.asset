@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Cenas/Menu.unity
-    guid: 8ac48114626d9014a8f047f96f503a63
+    path: Assets/Scenes/Menu.unity
+    guid: de1f4287f49a5c3439624f5c6fd4ab33
   - enabled: 1
-    path: Assets/Cenas/Avisos.unity
-    guid: 3dc1c5e6695f0d54caa96eefacc2f11f
+    path: Assets/Scenes/SelecionarFases.unity
+    guid: ccdc9573e937dd941b4276e2b445f48a
   - enabled: 1
-    path: Assets/Cenas/Jogar.unity
-    guid: f4634fd128e128b46b2354cffb4a5e6c
-  - enabled: 1
-    path: Assets/Cenas/Morte.unity
-    guid: ac2bf34c5e7317843947448af63c015e
+    path: Assets/Scenes/Fase-1.unity
+    guid: d6f5af44c8925754da96c9bcadd149b5
   m_configObjects: {}

@@ -1,4 +1,4 @@
-# Chagame.V.1.1
-Funcionamento básico já implementado, com cenário e personagem iniciais fictícios.
+# ChaGame-Fases
+Agora mudado para estilo de fases
 
-Usando o Unity 2018.3.8f1
+Criado um novo projeto do zero, aproveitando códigos e imagens do projeto antigo.

@@ -1,32 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Camerasegue : MonoBehaviour {
-
-    public GameObject player;
-    public float camVel = 0.25f;
-    private bool seguePlayer;
-    public Vector3 ultimolocal;
-    public Vector3 velAtual;
+public class CameraSegue : MonoBehaviour
+{
+    public GameObject Player;
+    public float CamVel = 0.25f;
+    Vector3 UltimaPos;
+    Vector3 VelAtual;
     
-    void Start () {
-        seguePlayer = true;
-        ultimolocal = player.transform.position;
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (seguePlayer)
-        {
-            if(player.transform.position.x >= transform.position.x)
-            {
-                Vector3 localnovo = Vector3.SmoothDamp(transform.position, player.transform.position, ref velAtual, camVel);
+    void Start()
+    {
+        UltimaPos = Player.transform.position;
+    }
 
-                transform.position = new Vector3(localnovo.x, 0 , transform.position.z);
+    void FixedUpdate()
+    {
+        
+            Vector3 NovaCam = Vector3.SmoothDamp(transform.position, Player.transform.position, ref VelAtual, CamVel);
 
-                ultimolocal = player.transform.position;
-            }
-        }
-	}
+            transform.position = new Vector3(NovaCam.x, NovaCam.y, transform.position.z);
+
+            //UltimaPos = Player.transform.position;
+        
+    }
 }
